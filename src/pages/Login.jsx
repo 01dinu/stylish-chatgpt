@@ -14,65 +14,67 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen white flex items-center justify-center px-4">
-      <div className="max-w-md w-full space-y-8">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold text-white">Hey It's Good to See you</h2>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-white p-4">
+    <div className="max-w-md space-y-8 items-center">
+      {/* Header */}
+      <div className="text-center">
+        <h2 className="mt-6 text-[31px] font-[700] text-gray-900">
+          Hey Its Good to See you
+        </h2>
+      </div>
         
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <div className="space-y-4">
+        <form className="mt-8 space-y-6 w-[320px] items-center ml-2" onSubmit={handleSubmit}>
+          
+          <div className="relative">
             <div className="relative">
-              <div className="relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
-                </div>
-                <label
-                  htmlFor="email"
-                  className="absolute -top-2 left-2 -mt-px px-1  text-xs font-medium text-green-500"
-                >
+              
+              <div className="absolute -top-2 flex items-center w-full">
+                <span className="text-[14px] text-[#0FA47F] bg-white pr-2 pl-2">
                   Email address
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  className="appearance-none rounded-md relative block w-full pl-10 px-3 py-2 border border-green-500 text-white placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                </span>
+                <div className="flex-grow h-[1px]"></div>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
-                </div>
-                <label
-                  htmlFor="password"
-                  className="absolute -top-2 left-2 -mt-px px-1  text-xs font-medium text-green-500"
-                >
-                  Password
-                </label>
-                <input
-                  id="password"
-                  type="password"
-                  required
-                  className="appearance-none rounded-md relative block w-full pl-10 px-3 py-2 border border-green-500 text-white placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+
+             
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full mt-2 px-3 py-2 border-2 border-[#0FA47F] rounded-md focus:outline-none focus:border-emerald-600"
+                placeholder=""
+              />
             </div>
           </div>
+            
+            
+          <div className="relative h-[64px]">
+            <div className="relative">
+              {/* Label with line */}
+              <div className="absolute -top-2 flex items-center w-full">
+                <span className="text-[14px] text-[#0FA47F] bg-white pl-2 pr-2">
+                  Password
+                </span>
+                <div className="flex-grow- h-[1px]"></div>
+              </div>
 
-          <button
-            type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-          >
-            Continue
-          </button>
+              {/* Input */}
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full mt-2 px-3 py-2 border-2 border-[#0FA47F] rounded-md focus:outline-none focus:border-emerald-600"
+                placeholder=""
+              />
+            </div>
+          </div>
+          {/* Continue Button */}
+          
+            <button
+              type="submit"
+              className="group relative w-full h-10 flex justify-center py-2 px-4 border border-transparent text-[15px] font-medium rounded-md text-white bg-[#00B894] hover:bg-[#00A583] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00B894]"
+            >
+              Continue
+            </button>
           <p className="text-center text-sm text-gray-400">
           Don't have an account?{' '}
           <Link to="/register" className="font-medium text-emerald-500 hover:text-emerald-400">
